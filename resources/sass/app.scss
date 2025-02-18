@@ -1,23 +1,544 @@
-// Define project theme colors
-$hz-background : #0078cc;
-$purple: #8a4d76;
-$pink: #fa7c91;
-$brown: #757763;
-$beige-light: #d0d1cd;
-$beige-lighter: #eff0eb;
+:root {
+    --main-text-color: white;
+}
 
-// Path to Bulma's sass folder
-@use "bulma/sass" with (
-  $family-primary: '"Roboto", sans-serif',
-  $grey-dark: $brown,
-  $grey-light: $beige-light,
-  $primary: $hz-background,
-);
+#personal {
+    background-color: #356251;
+    width: 55%;
+    height: 170px;
+    padding-left: 15px;
+    padding-right: 7px;
+    border: 4px solid white;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: var(--main-text-color);
+}
 
-// Font Awesome
-@use '@fortawesome/fontawesome-free/css/all.css';
+#prior {
+    background-color: rgb(63, 0, 145);
+    height: 255px;
+    width: 55%;
+    padding-left: 15px;
+    padding-right: 7px;
+    border: 4px solid white;
+    top: 200px;
+    left: 10px;
+    position: absolute;
+    color: var(--main-text-color);
+}
 
-// Typography. You can use any font here, but for demonstration purposes, we use some nice Google font
-// (check https://fonts.google.com/ for fonts)
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+#swot {
+    background-color:#215553;
+    width:33%;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding-left: 15px;
+    padding-right: 7px;
+    border: 4px solid white;
+    height: 270px;
+    color: var(--main-text-color);
+}
 
+#job {
+    background-color: rgb(31, 31, 100);
+    height: 155px;
+    width: 33%;
+    position: absolute;
+    top: 300px;
+    right: 10px;
+    padding-left: 15px;
+    padding-right: 7px;
+    border: 4px solid white;
+    color: var(--main-text-color);
+}
+
+#addit {
+    top: 480px;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 150px;
+    background-color: rgb(78, 36, 92);
+    color: var(--main-text-color);
+    border: 4px solid white;
+    padding-left: 15px;
+    padding-right: 7px;
+    position: absolute;
+    width: calc(100% - 50px);
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/public/images/mainbg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-color: black;
+}
+
+#backg {
+    filter: blur(8px);
+    position: fixed;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+    right: 0;
+    bottom: 0;
+    opacity: 50%;
+}
+
+ul {
+    font-family: Arial, sans-serif;
+    font-size: 10pt;
+    list-style: disc;
+}
+
+#order2 {
+    list-style-type:upper-roman;
+    margin-left: -1em;
+}
+
+h3 {
+    font-family: handjet, sans-serif;
+    font-size: 20pt;
+}
+
+p {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    font-size: 11pt;
+}
+
+.goback {
+    font-family: Helvetica, sans-serif;
+    font-style: italic;
+    color: var(--main-text-color);
+}
+
+.goback:visited {
+    color: var(--main-text-color);
+}
+
+.goback:hover {
+    color: #ccc;
+}
+
+.navbar {
+    margin: 0px;
+}
+
+.marker {
+    color: lightskyblue;
+    font-weight: bold;
+}
+
+.title {
+    animation: cycle 4s infinite;
+    display: inline;
+    font-family: helvetica, sans-serif;
+    font-size: 66pt;
+}
+
+@keyframes cycle {
+    0% {color: var(--main-text-color);}
+    50% {color: cornflowerblue;}
+    100% {color: var(--main-text-color);}
+}
+
+#navbar {
+    background-color: rgb(93, 72, 114);
+    border: 4px groove white;
+}
+
+.logo {
+    float: right;
+    display: inline;
+    margin: 0px;
+}
+
+#paragraphs {
+    background-color: #1e405f;
+    margin-left: 0px;
+    margin-right: 0px;
+    border: 3px solid white;
+    height: 276px;
+    padding: 10px;
+    max-width: calc(100% - 326px);
+    position: relative;
+    float: right;
+}
+
+#selfimg {
+    border: 3px solid white;
+    margin-left: 4px;
+    margin-right: 0px;
+    display: flex;
+    width: calc(100% - 10px);
+    background-color: #1d214d;
+    justify-content: space-evenly;
+}
+
+.myself {
+    height: 300px;
+    display: inline-block;
+}
+
+.titlebar {
+    background-color: rgb(117, 182, 185);
+    overflow: auto;
+    margin: 0px;
+    padding: 5px;
+    border: 4px groove white;
+}
+
+.navbar h1 {
+    font-family: consolas, monospace;
+    color: var(--main-text-color);
+    display: block;
+    text-align: center;
+    font-size: 27pt;
+    margin: 2px;
+}
+
+.links a {
+    color: var(--main-text-color);
+    text-decoration: none;
+    font-family: consolas;
+}
+
+.links {
+    padding: 6px;
+    justify-content: space-evenly;
+    display: flex;
+}
+
+.upbar {
+    position: fixed;
+    z-index: 3;
+    width: 100%;
+}
+
+.content {
+    top: 228.35px;
+    position: absolute;
+    width: 100%;
+}
+
+.button {
+    background-color: aquamarine;
+    border: black 2px solid;
+    height: 25px;
+    width: 150px;
+    text-align: center;
+    font-family: consolas, monospace;
+    color: black;
+    font-size: 11pt;
+}
+
+.button:hover {
+    background-color: mediumaquamarine;
+    cursor: pointer;
+}
+
+.on {
+    background-color: rgb(93, 72, 114);
+    border: none;
+    height: 25px;
+    width: 150px;
+    text-align: center;
+    font-family: consolas, monospace;
+    color: var(--main-text-color);
+    font-size: 11pt;
+}
+
+#dash {
+    width: 100%;
+    color: var(--main-text-color);
+    font-family: consolas, monospace;
+    border: cornflowerblue 2px solid;
+    background-color: darkslategray;
+    border-collapse: collapse;
+}
+
+td {
+    border: 2px solid white;
+    padding: 4px;
+}
+
+th {
+    border: 2px solid cyan;
+    background-color: darkblue;
+    padding: 4px;
+}
+
+#nbsa td {
+    background-color: crimson;
+    border: 2px solid white;
+}
+
+#tot td {
+    background-color: darkgreen;
+    border: 2px solid white;
+}
+
+.sidebut {
+    width: 100px;
+    height: 100px;
+    font-size: 11pt;
+    font-family: consolas, monospace;
+    background-color: rgb(40, 61, 100);
+    border: 2px white solid;
+    padding: 0px;
+    color: var(--main-text-color);
+}
+
+#sidebar {
+    width: 150px;
+    height: calc(100% - 4px);
+    background-color: rgb(45, 82, 83);
+    border: 3px groove white;
+    align-items: center;
+    justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 1;
+}
+
+
+.maincontent {
+    margin-left: 150px;
+}
+
+#info1 p {
+    font-family: Consolas, monospace;
+    font-size: 12pt;
+    color: var(--main-text-color);
+    width: 300px;
+    display: inline-block;
+}
+
+#info1 h2 {
+    font-family: Handjet, sans-serif;
+    font-size: 26pt;
+    color: var(--main-text-color);
+}
+
+#info1 h1 {
+    font-family: Handjet, sans-serif;
+    font-size: 32pt;
+    color: var(--main-text-color);
+}
+
+.profimg {
+    width: 300px;
+    display: inline-block;
+}
+
+#info1 {
+    margin-top: 20px;
+    display: flex;
+}
+
+#imag {
+    display: inline-block;
+    margin-left: 50px;
+    background-color: rgb(46, 44, 59);
+    padding: 10px;
+    border: 3px white solid;
+}
+
+.flexy {
+    justify-content: space-evenly;
+    display: inline-flex;
+}
+
+.middle {
+    text-align: center;
+    display: block;
+    font-family: handjet, sans-serif;
+}
+
+#socmed {
+    width: 200px;
+    padding: 6px;
+    display: block;
+    background-color: navy;
+    float: left;
+    border: white 3px solid;
+}
+
+.smed {
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+#personalinfo {
+    background-image: url("../../public/images/galaxy.webp");
+    color: var(--main-text-color);
+    border: 4px ridge white;
+    font-family: Helvetica, sans-serif;
+    font-size: 11pt;
+    height: 450px;
+    margin-top: 650px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#paragraphs h3 {
+    font-style: normal;
+    font-family: Consolas, monospace;
+    font-size: 20pt;
+    color: var(--main-text-color);
+}
+
+#paragraphs p {
+    font-style: normal;
+    font-family: Helvetica, sans-serif;
+    font-size: 11pt;
+    color: var(--main-text-color);
+}
+
+@font-face {
+    font-family: 'handjet';
+    src: url('/public/fonts/Handjet/static/Handjet-Medium.ttf');
+}
+
+.question {
+    font-family: handjet, sans-serif;
+    color: var(--main-text-color);
+    background-color: rgb(44, 137, 168);
+    font-size: 30pt;
+    padding: 5px;
+    border: 3px solid white;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.qna {
+    background-image: linear-gradient(darkslateblue, darkslategray);
+    border: white 4px solid;
+    margin: 30px;
+    padding-left: 20px;
+}
+
+.answers {
+    color: var(--main-text-color);
+    font-family: Consolas, monospace;
+    font-style: normal;
+    margin: 0;
+    margin-bottom: 10px;
+    line-height: 18pt;
+}
+
+
+.qna li {
+    font-family: Consolas, monospace;
+    font-size: 11pt;
+}
+
+.note {
+    font-weight: bold;
+    font-family: Helvetica, sans-serif;
+    color:lightsalmon;
+}
+
+.start {
+    width: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.startli {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.posts {
+    background-color: darkcyan;
+    width: 40%;
+    height: 595px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+    border: white 4px solid;
+    align-items: center;
+}
+
+.post {
+    color: var(--main-text-color);
+    font-family: consolas, monospace;
+    padding: 10px;
+    background-color: #424242;
+    border: 3px solid white;
+    width: 50%;
+    text-decoration: none;
+}
+
+#rev {
+    aspect-ratio: 3 / 4;
+    width: calc(30% - 4px);
+    position: absolute;
+    left: 0;
+}
+
+#nonrev {
+    aspect-ratio: 3 / 4;
+    width: calc(30% - 4px);
+    position: absolute;
+    right: 0;
+    transform: scaleX(-1);
+}
+
+#progMeter {
+    margin-left: 125px;
+    width: calc(100% - 250px);
+}
+
+.back {
+    border: white 4px solid;
+    background-color: rgb(93, 72, 114);
+    text-align: center;
+    position: fixed;
+    width: 100%;
+}
+
+.backbut {
+    border: black 2px solid;
+    background-color: aquamarine;
+    font-size: 13pt;
+    font-family: consolas, monospace;
+    margin: 10px;
+    width: 50%;
+    height: 50px;
+}
+
+
+.backbut:hover {
+    background-color: mediumaquamarine;
+    cursor: pointer;
+}
+
+.smallimage {
+    width: 150px;
+    filter: drop-shadow(10px 10px 5px #333);
+}
+
+.hoi {
+    color:black;
+}
+
+.postcontent {
+    position: absolute;
+    top: 100px;
+    height: 500px;
+    width: 100%;
+    border: 4px solid white;
+    background-color: rgb(29, 100, 112);
+    padding: 20px;
+}
