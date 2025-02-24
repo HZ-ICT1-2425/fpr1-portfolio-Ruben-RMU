@@ -28,6 +28,15 @@ class PostController extends Controller
     }
 
     /**
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory
+     */
+    public function edit(Post $post)
+    {
+        return view('posts.edit', compact('post'));
+    }
+
+    /**
      * Store a newly created Post in storage.
      */
     public function store()
@@ -42,6 +51,23 @@ class PostController extends Controller
         }
 
         return view('posts.create');
+    }
+
+    /**
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application|\Illuminate\Http\RedirectResponse
+     */
+    public function update(Post $post)
+    {
+        if (request()['title'] &&
+        request()['body']) {
+            $post->title = request()['title'];
+            $post->body = request()['body'];
+            $post->save();
+            return redirect()->route('posts');
+        }
+
+        return view('posts.edit', $post);
     }
 
     /**
