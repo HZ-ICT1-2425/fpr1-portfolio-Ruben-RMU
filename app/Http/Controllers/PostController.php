@@ -36,6 +36,17 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
+    public function delete(Post $post)
+    {
+        return view('posts.delete', compact('post'));
+    }
+
+    public function destroy(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('posts');
+    }
+
     /**
      * Store a newly created Post in storage.
      */
