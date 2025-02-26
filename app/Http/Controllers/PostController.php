@@ -36,11 +36,21 @@ class PostController extends Controller
         return view('posts.edit', compact('post'));
     }
 
+    /**
+     * @param Post $post
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Foundation\Application
+     * Shows delete confirm page
+     */
     public function delete(Post $post)
     {
         return view('posts.delete', compact('post'));
     }
 
+    /**
+     * @param Post $post
+     * @return \Illuminate\Http\RedirectResponse
+     * Deletes a post
+     */
     public function destroy(Post $post)
     {
         $post->delete();
